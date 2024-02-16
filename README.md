@@ -7,3 +7,6 @@ sudo ifconfig can0 up
 
 # Using candump to monitor
 sudo candump can0
+
+# Devices used
+Raspberry Pi
