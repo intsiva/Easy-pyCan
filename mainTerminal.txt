@@ -1,0 +1,260 @@
+    1  sudo apt-get install putty-y
+    2  sudo apt-get install putty -y
+    3  cat install.sh
+    4  vi install.sh
+    5  ls
+    6  pwd
+    7  cd Desktop/
+    8  ls
+    9  sh install.sh
+   10  [200~sudo apt-get update
+   11  sudo apt-get upgrade
+   12  sudo apt-get update
+   13  python --version
+   14  python3 --version
+   15  sudo apt-get instal
+   16  sudo apt-get install python30pil
+   17  sudo apt-get install python-pil
+   18  pip install python-pil
+   19  sudo apt-get install python3-pil
+   20  sudo apt-get install python3-pip
+   21  sudo apt-get install python3-numpy
+   22  sudo apt-get install wiringpi
+   23  sudo apt-get install can-utils mosquitto-clients
+   24  curl -fsSL https://get.docker.com -o get-docker.sh
+   25  sudo sh get-docker.sh
+   26  sudo usermod -aG docker pi
+   27  wget https://github.com/WiringPi/WiringPi/releases/download/2.61-1/wiringpi-2.61-1-armhf.deb
+   28  sudo dpkg -i wiringpi-2.61-1-armhf.deb
+   29  sudo dpkg -i wiringpi-latest.deb~
+   30  sudo pip3 install RPi.GPIO spidev python-can
+   31  sudo pip3 install python-can
+   32  cd Downloads/
+   33  mod +x ecu-start
+   34  chmod +x ecu-start
+   35  chmod +x ecu-stop
+   36  ./ecu-start -p
+   37  sudo ./ecu-start -p
+   38  ifconfig
+   39  ip addr | grep ''can
+   40  slcand
+   41  sudo ifconfig can0 txqueuelen 1000
+   42  cansend can0 999#DEADBEEF  
+   43  cansniffer can0 
+   44  candump -tz can0
+   45  pip install python-can
+   46  python -m can.viewer
+   47  cansend can0 999#DEADBEEF  
+   48  candump -tz can0
+   49  ifconfig
+   50  ip -details -statistics link show can0
+   51  python -m can.viewer -c can0
+   52  python -m can.viewer -c can0 -i socketcan
+   53  ifconfig
+   54  ipconfig
+   55  ifconfig /all
+   56  ifconfig
+   57  cd Downloads
+   58  ./ecu-start -p
+   59  cd downloads
+   60  cd /Downloads
+   61  cd /home/pi/Downloads
+   62  ./ecu-start -p
+   63  cansend can0 999#DEAD
+   64  cansend can0 65265#DEAD
+   65  cansend can0 FEE6FB#DEAD
+   66  cansend can0 18FEE6FB#DEAD
+   67  cansend can0 18FEE6FB#64 08 05 09 30 26 FF F9
+   68  cansend can0 18FEE6FB#640805093026FFF9
+   69  sudo ifconfig can0 down
+   70  sudo ifconfig can0 up
+   71  sudo ifconfig can0 down
+   72  sudo ifconfig can0 up
+   73  sudo ifconfig can0 down
+   74  pip install socketcan
+   75  sudo ifconfig can0 up
+   76  sudo ifconfig can0 down
+   77  sudo ifconfig can0 up
+   78  sudo ifconfig can0 down
+   79  sudo ifconfig can0 up
+   80  sudo ifconfig can0 down
+   81  sudo ifconfig can0 up
+   82  ./ecu-stop
+   83  ./ecu-start -p
+   84  ./ecu-stop
+   85  ./ecu-start -p
+   86  ./ecu-stop
+   87  ./ecu-start -p
+   88  ./ecu-stop
+   89  ./ecu-start -p
+   90  ./ecu-stop
+   91  ./ecu-start -p
+   92  ./ecu-stop
+   93  ./ecu-start -p
+   94  ./ecu-stop
+   95  ./ecu-start -p
+   96  ./ecu-stop
+   97  ./ecu-start -p
+   98  [200~git clone https://github.com/pimylifeup/Adafruit_Python_CharLCD.git~
+   99  [200~git clone https://github.com/pimylifeup/Adafruit_Python_CharLCD.git
+  100  git clone https://github.com/pimylifeup/Adafruit_Python_CharLCD.git
+  101  cd ./Adafruit_Python_CharLCD/
+  102  sudo python setup.py install
+  103  ls
+  104  sudo nano char_lcd.py
+  105  python char_lcd.py 
+  106  sudo pip3 install adafruit-blinka
+  107  sudo pip3 install adafruit-circuitpython-charlcd
+  108  sudo pip install RPLCD
+  109  ls
+  110  cd /home/pi/Downloads
+  111  ./ecu-start -p
+  112  python -m can.viewer -c can0 -i socketcan
+  113  pip --version
+  114  pip install j1939
+  115  pip install pcanbasic
+  116  ./ecu-stop
+  117  ./ecu-start -p
+  118  ./ecu-stop
+  119  pip install canopen
+  120  sudo slcand -o -c -s0 /dev/ttyACM0 can0
+  121  sudo ifconfig can0 up
+  122  sudo ifconfig can0 txqueuelen 1000
+  123  cansend can0 999
+  124  cansend can0 999#DEADBEEF
+  125  candump can0
+  126  clear
+  127  candump can0
+  128  candump can0 | grep 'FE81'
+  129  candump can0
+  130  candump can0 | grep 'FEF1'
+  131  candump can0 | grep 'FE81'
+  132  candump can0 | grep 'FEF1'
+  133  candump can0
+  134  cd Downloads/
+  135  ./ecu-start -p
+  136  sudo ifconfig can0 up
+  137  sudo ifconfig can0 txqueuelen 1000
+  138  sudo ifconfig can0 up
+  139  sudo ip link set can0 type can bitrate 500000
+  140  sudo ip link set up can0
+  141  sudo ifconfig can0 up
+  142  lsmod | grep can
+  143  sudo ifconfig can0 up
+  144  sudo ifconfig can1 up
+  145  history | grep 'device'
+  146  sudo ifconfig
+  147  sudo ifconfig can0 up
+  148  sudo ifconfig
+  149  dmesg | grep can
+  150  sudo ip link set can0 type can bitrate 500000~
+  151  sudo ip link set can0 type can bitrate 500000
+  152  sudo ip link set up can0
+  153  sudo ifconfig can0 up
+  154  candump can0 | grep 'FEF1'
+  155  candump can0
+  156  sudo candump can0
+  157  cd Downloads/
+  158  ./ecu-start -p
+  159  sudo candump can0
+  160  ./ecu-stop 
+  161  ./ecu-start -p
+  162  sudo candump can0
+  163  sudo ifconfig can0 up
+  164  sudo candump can0
+  165  history | grep 'bitrate'
+  166  candump can0 -e
+  167  sudo ifconfig can0 up
+  168  ./ecu-stop 
+  169  cd Downloads/
+  170  ./ecu-stop 
+  171  ./ecu-start -p
+  172  ./ecu-stop 
+  173  sudo ifconfig can0 up
+  174  ~7
+  175  sudo candump can0
+  176  sudo ifconfig can0 up
+  177  ./ecu-stop 
+  178  ./ecu-start -p
+  179  ./ecu-stop 
+  180  sudo ifconfig can0 up
+  181  sudo candump can0
+  182  sudo ip link set can0 type can bitrate 500000
+  183  sudo ip link set up can0
+  184  sudo candump can0
+  185  sudo ifconfig can0 up
+  186  sudo candump can0
+  187  sudo ifconfig can0 up
+  188  sudo candump can0
+  189  sudo ifconfig can0 up
+  190  sudo ip link set can0 type can bitrate 250000
+  191  sudo ifconfig can0 up
+  192  sudo candump can0
+  193  sudo ifconfig can0 down
+  194  sudo ip link set can0 type can bitrate 250000
+  195  sudo candump can0
+  196  sudo ifconfig can0 up
+  197  sudo candump can0
+  198  sudo ifconfig can0 up
+  199  sudo candump can0
+  200  ./ecu-start -p
+  201  ls
+  202  cd Downloads/
+  203  ./ecu-start -p
+  204  sudo candump can0
+  205  sudo ifconfig can0 up
+  206  sudo ip link set can0 type can bitrate 250000
+  207  sudo ifconfig can0 up
+  208  sudo candump can0
+  209  sudo ip link set can0 type can
+  210  sudo ifconfig can0 up
+  211  sudo candump can0
+  212  sudo candump -e
+  213  sudo candump can0 -e
+  214  ./ecu-start -p
+  215  cd Downloads/
+  216  ./ecu-start -p
+  217  sudo candump can0
+  218  ./ecu-stop
+  219  cd Downloads/
+  220  ./ecu-stop 
+  221  ./ecu-start -p
+  222  sudo candump can0
+  223  sudo ifconfig can0 up
+  224  sudo candump can0
+  225  sudo ifconfig can0 up
+  226  sudo candump can0
+  227  sudo ifconfig can0 up
+  228  sudo ip link set can0 type can bitrate 250000
+  229  sudo ifconfig can0 up
+  230  sudo candump can0
+  231  sudo ifconfig can0 up
+  232  sudo ip link set can0 type can bitrate 250000
+  233  sudo ifconfig can0 up
+  234  ./ecu-start -p
+  235  cd Downloads/
+  236  ls
+  237  ./ecu-start -p
+  238  sudo candump can0
+  239  ./ecu-stop 
+  240  ./ecu-start -p
+  241  sudo candump can0
+  242  sudo ip link set can0 type can bitrate 250000
+  243  sudo ifconfig can0 up
+  244  sudo candump can0
+  245  sudo ifconfig can0 up
+  246  sudo candump can0
+  247  sudo ifconfig can0 up
+  248  sudo ip link set can0 type can bitrate 250000
+  249  sudo ifconfig can0 up
+  250  sudo candump can0
+  251  ./ecu-stop 
+  252  ./ecu-start -p
+  253  ls usb
+  254  lsusb
+  255  gpio read all
+  256  raspi-gpio get
+  257  /bin/python /home/pi/Easy-pyCan/stand_test.py
+  258  history
+  259  history ? ~/Easy-pyCan/mainTerminal.txt
+  260  history > ~/Easy-pyCan/mainTerminal.txt
