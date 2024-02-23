@@ -1,5 +1,8 @@
 # Easy-pyCan
 
+# Dependencies
+install python-can
+
 # Setup can port
 sudo ip link set can0 type can bitrate 250000
 
