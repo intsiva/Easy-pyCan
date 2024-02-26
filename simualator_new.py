@@ -1,13 +1,14 @@
 import can
 import time
 from gpiozero import MCP3008, InputDevice
-
+import board
+import neopixel
 
 pot = MCP3008(0)
 ignition = InputDevice(23, pull_up=False)
 
 bus = can.interface.Bus(channel="can0", bustype="socketcan")
-
+pixels = neopixel.NeoPixel(board.D18, 8, brightness=1)
 speed = 0
 rpm = 800
 
@@ -25,17 +26,17 @@ def set_rpm(value):
 
     j1939_can_id = construct_j1939_can_id(priority, pgn_for_rpm, sa)
     # data = value.to_bytes(2, byteorder='little', signed=False)
-    if ignition == 1:
+    if ignition.value == 1:
+        pixels[0] = (255, 0, 0)
         data = [0x00, 0x00, 0x00, 0x80, 0x3E, 0x00, 0x00, 0x00]
     else:
+        pixels[0] = (0, 0, 0)
         data = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
     # can0  18F00400   [8]  00 00 00 B0 04 00 00 00
     msg = can.Message(arbitration_id=j1939_can_id, data=data, is_extended_id=True)
     try:
         bus.send(msg)
-        print(
-            f"J1939 CAN message sent successfully with id = {j1939_can_id} data = {data}"
-        )
+        print(f"J1939 CAN message sent successfully with id = {j1939_can_id} data = {data}")
     except can.CanError:
         print("Error sending J1939 CAN message")
 
@@ -50,9 +51,7 @@ def set_speed(value):
     msg = can.Message(arbitration_id=j1939_can_id, data=data, is_extended_id=True)
     try:
         bus.send(msg)
-        print(
-            f"J1939 CAN message sent successfully with id = {j1939_can_id} data = {data}"
-        )
+        #print(f"J1939 CAN message sent successfully with id = {j1939_can_id} data = {data}")
     except can.CanError:
         print("Error sending J1939 CAN message")
 
@@ -66,6 +65,8 @@ try:
         set_speed(speed)
         set_rpm(rpm)
         time.sleep(0.5)
+except KeyboardInterrupt:
+    pixels[0] = (0, 0, 0)
 finally:
     pot.close
     ignition.close        
